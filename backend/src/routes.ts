@@ -11,6 +11,7 @@ routes.get('/store', new StoreContoller().list);
 
 //Rotas dos cupons
 routes.post('/coupon/:idStore/create', new CouponController().create);
+routes.delete('/coupon/:idCoupon', new CouponController().delete);
 routes.get('/coupon', new CouponController().list);
 
 export default routes;
