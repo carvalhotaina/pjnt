@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CarouselModule } from './carousel/carousel.module';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './services/login.service';
 
@@ -18,7 +19,8 @@ import { LoginService } from './services/login.service';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
