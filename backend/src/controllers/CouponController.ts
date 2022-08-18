@@ -63,6 +63,7 @@ export class CouponController {
             const cupons = await couponRepository.find({
                 relations: {
                     store: true,
+                    user: true
                 },
             })
 
