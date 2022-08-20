@@ -9,6 +9,11 @@ export class AppComponent {
   title = 'ProjetoCupom';
 
    imagens = [
+     {
+       imageSrc:
+         'https://img.terabyteshop.com.br/og_tb.png',
+       imageAlt: 'nature3',
+     },    
     {
       imageSrc:
       'https://www.reclamefacil.com.br/app/thumbs.php?img=../uploads/img/empresas/51/a4734b3d7e8ea850f134e1db4816df35.jpg&w=500&h=500',
@@ -20,7 +25,6 @@ export class AppComponent {
         'https://cdn.pegadesconto.com.br/logotipo-pichau-informatica-1.png',
       imageAlt: 'nature2',
     },
-    
   ]
   
 }
