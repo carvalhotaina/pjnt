@@ -8,12 +8,16 @@ import { AppComponent } from './app.component';
 import { CarouselModule } from './carousel/carousel.module';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './services/login.service';
+import { HomeComponent } from './pages/home/home.component';
+import { FavoritosComponent } from './pages/favoritos/favoritos.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    FavoritosComponent
   ],
   imports: [
     HttpClientModule,
