@@ -1,14 +1,23 @@
-import express from 'express'
-import { AppDataSource } from './data-souce'
-import routes from './routes'
+import 'express-async-errors';
+import express from 'express';
+import { AppDataSource } from './data-souce';
+import { errorMiddleware } from './middlewares/error';
+import routes from './routes';
 
 //Cria o express após iniciar o banco de dados
 AppDataSource.initialize().then(() => {
-    const app = express()
+    const app = express();
 
-    app.use(express.json())
+    const port = process.env.PORT || 3000;
 
-    app.use(routes)
+    app.use(express.json());
 
-    return app.listen(3000)
+    app.get('/', (req, res) => {
+        return res.json({ msg: "Api works!" });
+    })
+
+    app.use(routes);
+
+    app.use(errorMiddleware);
+    return app.listen(port);
 })
