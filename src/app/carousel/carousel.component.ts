@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CarouselService } from '../services/carousel.service';
 
 interface corouselImagens{
   imageSrc: string;
@@ -18,14 +21,22 @@ export class CarouselComponent implements OnInit {
   @Input() autoSlide = false;
   @Input() slideInterval = 3000; ///Default 3 segundos
 
+  carouselForm!: FormGroup;
+
   selectedIndex = 0;
 
-  constructor() { }
+  constructor( private formBuilder : FormBuilder, 
+    private router: Router,public carouselService: CarouselService) { }
 
   ngOnInit(): void {
     if(this.autoSlide){
       this.autoSlideImagens();
     }
+    this.carouselForm = this.formBuilder.group(
+      {
+        cupom : [''],
+      }
+    );
   }
 
   autoSlideImagens(): void{

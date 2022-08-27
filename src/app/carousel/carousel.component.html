@@ -4,7 +4,11 @@
      [ngClass]="{'imagens-active' : selectedIndex === i}"
      class="fade"
      >
-
+     <form class="form-horizontal" [formGroup] = "carouselForm">
+      <div class="form-group">
+         <label for="cupom" class="control-label">cupom</label>
+      </div>
+     </form>
      <div *ngIf="indicators" class="carousel-dot-container">
         <span *ngFor="let dot of imagens; let i=index" 
                 class="dot"
